@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天知道</title>
+    <script src="vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #app {
+            margin: 250px auto;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        li .box {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入城市" @keyup.enter="searchweather" v-model="city">
+        <button @click="searchweather">查询</button>
+        <div class="hotkey">
+            <a href="javascript:;" @click="changecity('北京')">北京</a>
+            <a href="javascript:;" @click="changecity('上海')">上海</a>
+            <a href="javascript:;" @click="changecity('广州')">广州</a>
+            <a href="javascript:;" @click="changecity('深圳')">深圳</a>
+        </div>
+        <ul class="weather_list">
+            <li v-for="(item,index) in weatherList">
+                <div class="box">
+                    <div class="weatherbox">{{item.date}}</div>
+                    <div class="weatherbox">{{item.fengli}}</div>
+                    <div class="weatherbox">{{item.fengxian}}</div>
+                    <div class="weatherbox">{{item.high}}</div>
+                    <div class="weatherbox">{{item.low}}</div>
+                    <div class="weatherbox">{{item.type}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
