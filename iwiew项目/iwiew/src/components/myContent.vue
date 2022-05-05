@@ -19,11 +19,11 @@
             <a
               href="javascript:;"
               title="详情"
-              @click="isShow = true"
+              @click="isShowDetail = true"
               type="primary"
               ><img src="../assets/detal.png" alt=""
             /></a>
-            <a href="javascript:;" title="更多"
+            <a href="javascript:;" title="更多" @click="isShowMore = true"
               ><img src="../assets/more.png" alt=""
             /></a>
           </div>
@@ -37,11 +37,32 @@
     </Row>
 
     <!-- 抽屉效果 -->
-    <Drawer class="myDrawer" title="歌曲信息" :closable="false" v-model="isShow" width="40">
-      <p>歌手：{{ myMusicList.musicName }}</p>
-      <p>歌曲：{{ myMusicList.musicAlbum }}</p>
-      <p>专辑：{{ myMusicList.musicAlbum }}</p>
-      <p style="color:red">这是不三连能看的？！？！</p>
+    <Drawer
+      class="myDrawer"
+      title="歌曲信息"
+      :closable="false"
+      v-model="isShowDetail"
+      width="40"
+    >
+      <div class="isShowDetailBox">
+        <p>歌手：{{ myMusicList.musicName }}</p>
+        <p>歌曲：{{ myMusicList.musicAlbum }}</p>
+        <p>专辑：{{ myMusicList.musicAlbum }}</p>
+        <p style="color: red">这是不三连能看的？！？！</p>
+      </div>
+    </Drawer>
+
+    <Drawer
+      class="myDrawer"
+      title="更多信息"
+      :closable="false"
+      v-model="isShowMore"
+      width="40"
+    >
+      <div class="isShowMoreBox">
+        <p>这是写评论啥的吧（应该）</p>
+        <p style="color: red">三连求求~</p>
+      </div>
     </Drawer>
   </div>
 </template>
@@ -52,7 +73,8 @@ export default {
 
   data() {
     return {
-      isShow: false,
+      isShowDetail: false,
+      isShowMore: false,
       myMusicList: {
         imgUrlTrue: "",
         musicName: "",
@@ -132,8 +154,26 @@ img {
   width: 2rem;
 }
 
-.myDrawer p{
-    font-size: 1.5rem;
-    color: chartreuse;
+.myDrawer p {
+  font-size: 1.5rem;
+  color: chartreuse;
+}
+
+.isShowDetailBox{
+  width: 100%;
+  height: 100%;
+  background: url('../assets/detail.jpg');
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+.isShowMoreBox p{
+  opacity:1;
+}
+.isShowMoreBox{
+  width: 100%;
+  height: 100%;
+  background: url('../assets/more.jpg');
+  background-size: 100% 100%;
+  opacity: 0.5;
 }
 </style>

@@ -111,7 +111,7 @@ export default {
     return {
       keywords: "",
       musicList: {},
-      limit: 100,
+      limit: 80,
       musicUrlTrue: "",
     };
   },
@@ -149,6 +149,7 @@ watch: {
           type: "success",
         });
         this.musicList = result.data.result;
+        
       }
     },
     playAudio() {},
