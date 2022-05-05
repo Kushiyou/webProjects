@@ -63,7 +63,6 @@ export default {
         console.log(item);
         this.musicImgAndName.img1v1Url = item.artists[0].img1v1Url
         this.musicImgAndName.name = item.artists[0].name
-        this.musicImgAndName.album = item.album.name
         this.$store.commit('setMusicList1', this.musicImgAndName)
         this.$store.commit('musicList',this.musicUrl)
       }
