@@ -157,6 +157,7 @@ img {
 .myDrawer p {
   font-size: 1.5rem;
   color: chartreuse;
+  opacity:1;
 }
 
 .isShowDetailBox{
@@ -165,9 +166,6 @@ img {
   background: url('../assets/detail.jpg');
   background-size: 100% 100%;
   opacity: 0.5;
-}
-.isShowMoreBox p{
-  opacity:1;
 }
 .isShowMoreBox{
   width: 100%;

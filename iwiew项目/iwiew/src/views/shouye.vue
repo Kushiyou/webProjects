@@ -115,7 +115,7 @@ export default {
       musicUrlTrue: "",
     };
   },
-  components: { showCard,myContent},
+  components: {showCard,myContent},
   computed: {
     urlData() {
       return this.$store.state.musicUrl
